@@ -3735,7 +3735,7 @@ function renderUsers() {
       const device = card.querySelector("[data-device]")
       const device_copy = card.querySelector("[data-copy]")
       const device_search = card.querySelector("[data-search]")
-      device_copy.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-clipboard btn h-10 w-10  ml-4 md:ml-20 align-middle text-yellow-300 hover:text-red-600 hover:scale-125" onclick="copyContentit('${user.device}')" viewBox="0 0 16 16">
+      device_copy.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-clipboard btn h-10 w-10  ml-4 md:ml-20 align-middle text-black hover:text-red-600 hover:scale-125" onclick="copyContentit('${user.device}')" viewBox="0 0 16 16">
       <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
       <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
     </svg>
@@ -3744,21 +3744,21 @@ function renderUsers() {
     
       `
       device_search.innerHTML = `
-      <button id="dropdownDefaultButton" data-dropdown-toggle="${user._id}" class="text-white hidden md:flex bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Search<svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-      <button id="dropdownDefaultButton" data-dropdown-toggle="${user._id}" class="text-white sm:flex md:hidden bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search text-slate-100" viewBox="0 0 16 16">
+      <button id="dropdownDefaultButton" data-dropdown-toggle="${user._id}" class="text-black hidden md:flex bg-black hover:bg-gray-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-4 py-2.5 text-center items-center " type="button">Search<svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" hover:text-white stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+      <button id="dropdownDefaultButton" data-dropdown-toggle="${user._id}" class="text-white hover:text-white sm:flex md:hidden bg-black hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search text-slate-100" viewBox="0 0 16 16">
       <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
     </svg><svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
       <!-- Dropdown menu -->
-      <div id="${user._id}"  class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+      <div id="${user._id}"  class="z-10 hidden bg-black divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+          <ul class="py-2 text-sm text-white dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
             <li>
-              <a href="https://www.alibaba.com/trade/search?tab=all&searchText=${user.device}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Alibaba</a>
+              <a href="https://www.alibaba.com/trade/search?tab=all&searchText=${user.device}" class="block px-4 py-2 hover:bg-gray-100 hover:text-black">Alibaba</a>
             </li>
             <li>
-              <a href="https://www.amazon.com/s?k=${user.device}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Amazon</a>
+              <a href="https://www.amazon.com/s?k=${user.device}" class="block px-4 py-2 hover:bg-gray-100 hover:first-line:text-black">Amazon</a>
             </li>
             <li>
-              <a href="https://supply.unicef.org/catalogsearch/result/?q=${user.device}"class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Unicef Catalogue</a>
+              <a href="https://supply.unicef.org/catalogsearch/result/?q=${user.device}"class="block px-4 py-2 hover:bg-gray-100 hover:text-black">Unicef Catalogue</a>
             </li>
             
           </ul>
@@ -3780,15 +3780,15 @@ function renderUsers() {
   function handleSwitchButton(value) {
    
     if (value == true) {
-      currentData = data1
-      var element = document.getElementById("ppl");
-      element.innerHTML = "PPL 2021"
-      document.getElementById("no").innerText = 258
-    } else {
       currentData = data
       var element = document.getElementById("ppl");
       element.innerHTML = "PPL 2023"
       document.getElementById("no").innerText = 180
+    } else {
+      currentData = data1
+      var element = document.getElementById("ppl");
+      element.innerHTML = "PPL 2021"
+      document.getElementById("no").innerText = 258
     }
     
    
@@ -3801,6 +3801,7 @@ function renderUsers() {
   const switchButton = document.querySelector("[data-switch-button]");
 
   switchButton.addEventListener("change", function(event) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     const switchValue = event.target.checked;
    
 
@@ -3848,7 +3849,7 @@ function renderUsers() {
         // Create a link element
         var link = document.createElement('a');
         link.href = pdfUrl;
-        link.download = 'ppl 2023.xlsx'; // Set the filename for the download
+        link.download = 'ppl 2021.xlsx'; // Set the filename for the download
         link.innerText = 'Download PDF';
       
         // Append the link to the document body
